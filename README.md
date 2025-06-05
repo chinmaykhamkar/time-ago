@@ -1,8 +1,8 @@
-# ⏰ time-ago
+# ⏰ timeago-format
 
 A lightweight, zero-dependency TypeScript library for formatting timestamps into human-readable "time ago" strings.
 
-[![npm version](https://badge.fury.io/js/time-ago.svg)](https://www.npmjs.com/package/time-ago)
+[![npm version](https://badge.fury.io/js/timeago-format.svg)](https://www.npmjs.com/package/timeago-format)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -18,21 +18,21 @@ A lightweight, zero-dependency TypeScript library for formatting timestamps into
 ## 📦 Installation
 
 ```bash
-npm install time-ago
+npm install timeago-format
 ```
 
 ```bash
-yarn add time-ago
+yarn add timeago-format
 ```
 
 ```bash
-pnpm add time-ago
+pnpm add timeago-format
 ```
 
 ## 🚀 Quick Start
 
 ```typescript
-import { timeAgo } from 'time-ago';
+import { timeAgo } from 'timeago-format';
 
 // Basic usage
 console.log(timeAgo(new Date(Date.now() - 30000))); // "30s ago"
@@ -43,6 +43,52 @@ console.log(timeAgo(new Date(Date.now() - 3600000))); // "1h ago"
 console.log(timeAgo(Date.now() - 30000)); // timestamp
 console.log(timeAgo('2024-01-15T10:30:00Z')); // ISO string
 console.log(timeAgo(new Date('2024-01-15'))); // Date object
+```
+
+## 🔧 Setup for Different Module Systems
+
+### ES Modules (Modern JavaScript/TypeScript)
+This is the default and recommended approach:
+
+```typescript
+import { timeAgo } from 'timeago-format';
+```
+
+### CommonJS (Node.js with require)
+If you want to use `require()` syntax, ensure your project is set up for CommonJS:
+
+1. **Make sure your `package.json` doesn't have `"type": "module"`** (or set it to `"type": "commonjs"`)
+2. **Use `.js` file extensions** (not `.mjs`)
+3. **Use require syntax**:
+
+```javascript
+const { timeAgo } = require('timeago-format');
+
+// Usage is exactly the same
+console.log(timeAgo(new Date(Date.now() - 30000))); // "30s ago"
+```
+
+### Project Setup Example for CommonJS
+
+Create a new project with CommonJS support:
+
+```bash
+# Create project directory
+mkdir my-timeago-project
+cd my-timeago-project
+
+# Initialize package.json (ensure no "type": "module")
+npm init -y
+
+# Install the package
+npm install timeago-format
+
+# Create a test file (test.js)
+echo 'const { timeAgo } = require("timeago-format");
+console.log(timeAgo(new Date(Date.now() - 30000)));' > test.js
+
+# Run the test
+node test.js
 ```
 
 ## 📖 API Reference
@@ -85,7 +131,7 @@ interface TimeAgoOptions {
 ### Basic Time Intervals
 
 ```typescript
-import { timeAgo } from 'time-ago';
+import { timeAgo } from 'timeago-format';
 
 const now = new Date();
 
@@ -170,7 +216,7 @@ timeAgo(undefined); // ❌ TypeScript error
 Full TypeScript support with exported types:
 
 ```typescript
-import { timeAgo, DateInput, TimeAgoOptions } from 'time-ago';
+import { timeAgo, DateInput, TimeAgoOptions } from 'timeago-format';
 
 const input: DateInput = new Date();
 const options: TimeAgoOptions = { 
@@ -181,17 +227,20 @@ const options: TimeAgoOptions = {
 const result: string = timeAgo(input, options);
 ```
 
-## 🔧 CommonJS Support
+## 🔧 Module System Compatibility
 
 ```javascript
-// CommonJS
-const { timeAgo } = require('time-ago');
+// CommonJS (Node.js)
+const { timeAgo } = require('timeago-format');
 
-// ES Modules  
-import { timeAgo } from 'time-ago';
+// ES Modules (Modern JavaScript/TypeScript)
+import { timeAgo } from 'timeago-format';
 
 // Default export
-import timeAgo from 'time-ago';
+import timeAgo from 'timeago-format';
+
+// Dynamic import (ES2020+)
+const { timeAgo } = await import('timeago-format');
 ```
 
 ## 🎯 Use Cases
@@ -218,7 +267,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
 
-## 🌟 Why time-ago?
+## 🌟 Why timeago-format?
 
 - **Simple & focused** - Does one thing really well
 - **TypeScript native** - Built with TS from the ground up

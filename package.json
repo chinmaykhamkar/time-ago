@@ -1,5 +1,5 @@
 {
-  "name": "@chinmaykhamkar/time-ago",
+  "name": "timeago-format",
   "version": "1.0.0",
   "description": "A lightweight TypeScript library for formatting timestamps into human-readable 'time ago' strings",
   "main": "dist/index.js",
@@ -32,7 +32,7 @@
     "typescript",
     "javascript"
   ],
-  "author": "Your Name",
+  "author": "Chinmay Khamkar",
   "license": "MIT",
   "repository": {
     "type": "git",
