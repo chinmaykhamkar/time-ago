@@ -131,18 +131,18 @@ describe('timeAgo', () => {
   describe('month name formatting', () => {
     test('should format all months correctly', () => {
       const months = [
-        { date: '2024-01-01', expected: 'Jan 1, 2024' },
-        { date: '2024-02-01', expected: 'Feb 1, 2024' },
-        { date: '2024-03-01', expected: 'Mar 1, 2024' },
-        { date: '2024-04-01', expected: 'Apr 1, 2024' },
-        { date: '2024-05-01', expected: 'May 1, 2024' },
-        { date: '2024-06-01', expected: 'Jun 1, 2024' },
-        { date: '2024-07-01', expected: 'Jul 1, 2024' },
-        { date: '2024-08-01', expected: 'Aug 1, 2024' },
-        { date: '2024-09-01', expected: 'Sep 1, 2024' },
-        { date: '2024-10-01', expected: 'Oct 1, 2024' },
-        { date: '2024-11-01', expected: 'Nov 1, 2024' },
-        { date: '2024-12-01', expected: 'Dec 1, 2024' }
+        { date: '2024-01-01T12:00:00Z', expected: 'Jan 1, 2024' },
+        { date: '2024-02-01T12:00:00Z', expected: 'Feb 1, 2024' },
+        { date: '2024-03-01T12:00:00Z', expected: 'Mar 1, 2024' },
+        { date: '2024-04-01T12:00:00Z', expected: 'Apr 1, 2024' },
+        { date: '2024-05-01T12:00:00Z', expected: 'May 1, 2024' },
+        { date: '2024-06-01T12:00:00Z', expected: 'Jun 1, 2024' },
+        { date: '2024-07-01T12:00:00Z', expected: 'Jul 1, 2024' },
+        { date: '2024-08-01T12:00:00Z', expected: 'Aug 1, 2024' },
+        { date: '2024-09-01T12:00:00Z', expected: 'Sep 1, 2024' },
+        { date: '2024-10-01T12:00:00Z', expected: 'Oct 1, 2024' },
+        { date: '2024-11-01T12:00:00Z', expected: 'Nov 1, 2024' },
+        { date: '2024-12-01T12:00:00Z', expected: 'Dec 1, 2024' }
       ];
 
       months.forEach(({ date, expected }) => {

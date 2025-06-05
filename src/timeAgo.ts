@@ -51,8 +51,14 @@ export function timeAgo(input: DateInput, options: TimeAgoOptions = {}): string 
       return `${diff.hours}h ago`;
     }
     
+    // For dates more than 24 hours ago, ensure we're comparing dates at midnight
+    const startOfDate = new Date(date);
+    startOfDate.setHours(0, 0, 0, 0);
+    const startOfReference = new Date(referenceDate);
+    startOfReference.setHours(0, 0, 0, 0);
+    
     // 24+ hours - use date format
-    const includeYear = !isSameYear(date, referenceDate);
+    const includeYear = !isSameYear(startOfDate, startOfReference);
     return formatDate(date, includeYear);
     
   } catch (error) {

@@ -36,11 +36,12 @@ export function getTimeDifference(date: Date, referenceDate: Date): TimeDifferen
  * Formats a date as "Month Day" or "Month Day, Year"
  */
 export function formatDate(date: Date, includeYear: boolean = false): string {
-  const month = MONTH_NAMES[date.getMonth()];
-  const day = date.getDate();
+  // Use UTC methods to ensure consistent date formatting across timezones
+  const month = MONTH_NAMES[date.getUTCMonth()];
+  const day = date.getUTCDate();
   
   if (includeYear) {
-    const year = date.getFullYear();
+    const year = date.getUTCFullYear();
     return `${month} ${day}, ${year}`;
   }
   
@@ -51,7 +52,7 @@ export function formatDate(date: Date, includeYear: boolean = false): string {
  * Checks if two dates are in the same year
  */
 export function isSameYear(date1: Date, date2: Date): boolean {
-  return date1.getFullYear() === date2.getFullYear();
+  return date1.getUTCFullYear() === date2.getUTCFullYear();
 }
 
 /**
