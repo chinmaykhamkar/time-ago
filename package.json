@@ -1,5 +1,5 @@
 {
-  "name": "time-ago",
+  "name": "@chinmaykhamkar/time-ago",
   "version": "1.0.0",
   "description": "A lightweight TypeScript library for formatting timestamps into human-readable 'time ago' strings",
   "main": "dist/index.js",
@@ -36,12 +36,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/time-ago.git"
+    "url": "https://github.com/chinmaykhamkar/time-ago"
   },
   "bugs": {
-    "url": "https://github.com/your-username/time-ago/issues"
+    "url": "https://github.com/chinmaykhamkar/time-ago/issues"
   },
-  "homepage": "https://github.com/your-username/time-ago#readme",
+  "homepage": "https://github.com/chinmaykhamkar/time-ago#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
